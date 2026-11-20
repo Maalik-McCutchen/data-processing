@@ -44,6 +44,19 @@ public class Program {
         personList.add(person10);
 
         System.out.println("Enter a first or last name to search: ");
-        String user = myScanner.nextLine();
+        String user = myScanner.nextLine().trim();
+
+        List<Person> poepleList = new ArrayList<>();
+
+        for (Person person : personList) {
+
+            if (person.getFirstName().equalsIgnoreCase(user) || person.getLastName().equalsIgnoreCase(user)) {
+                poepleList.add(person);
+            }
+        }
+        for (Person person11 : poepleList) {
+            System.out.println(person11.getFirstName() + " " + person11.getLastName());
+
+        }
     }
 }
